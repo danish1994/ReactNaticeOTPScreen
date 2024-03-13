@@ -40,7 +40,7 @@ function Code(
 
     const onCodeChange = useCallback((text, index) => {
         if (text.length >= length) {
-            const newCode = text.split('').slice(text.length - length, length);
+            const newCode = text.split('').slice(0, length);
             console.log(newCode);
             setCode(newCode);
         } else {

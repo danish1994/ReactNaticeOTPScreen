@@ -53,7 +53,7 @@ function Code(
             }
 
             if (newCode[index] === '') {
-                if (newCode[index - 1]) {
+                if (newCode[index - 1] !== '') {
                     codeRef.current[index - 1]?.focus()
                 }
             }

@@ -39,23 +39,27 @@ function Code(
     const codeRef = useRef([]);
 
     const onCodeChange = useCallback((text, index) => {
-        const newCode = [...code];
-        newCode[index] = text.charAt(text.length - 1) || '';
-
-        if (newCode[index] !== '') {
-            if (index < length - 1) {
-                codeRef.current[index + 1]?.focus()
+        if (text.length >= length) {
+            const newCode = text.split('').slice(0, length);
+            console.log(newCode);
+            setCode(newCode);
+        } else {
+            const newCode = [...code];
+            newCode[index] = text.charAt(text.length - 1) || '';
+            if (newCode[index] !== '') {
+                if (index < length - 1) {
+                    codeRef.current[index + 1]?.focus()
+                }
             }
-        }
 
-        if (newCode[index] === '') {
-            if (newCode[index - 1]) {
-                codeRef.current[index - 1]?.focus()
+            if (newCode[index] === '') {
+                if (newCode[index - 1]) {
+                    codeRef.current[index - 1]?.focus()
+                }
             }
+            console.log(newCode);
+            setCode(newCode);
         }
-
-        console.log(newCode);
-        setCode(newCode);
     }, [code, setCode]);
 
     const setRef = useCallback((curRef, index) => {

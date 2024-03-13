@@ -1,34 +1,7 @@
-import {StyleSheet, Text, TextInput, View} from 'react-native';
+import {StyleSheet, TextInput, View} from 'react-native';
 import {useCallback, useRef, useState} from "react";
 
-
-const digitStyle = {borderWidth: 1, borderColor: 'red', margin: 10};
 const length = 6;
-//
-// function Digit(
-//     {
-//         value,
-//         index,
-//         onCodeChange,
-//         setRef
-//     }
-// ) {
-//     const onChange = useCallback((value) => {
-//         onCodeChange(value, index);
-//     }, [index, onCodeChange]);
-//
-//     const setDigitRef = useCallback((ref) => {
-//         setRef(ref, index);
-//     }, [index, onCodeChange]);
-//
-//     return <TextInput
-//         text
-//         style={digitStyle}
-//         ref={setDigitRef}
-//         value={value}
-//         onChangeText={onChange}
-//     />
-// }
 
 function Code(
     {
@@ -66,13 +39,15 @@ function Code(
         codeRef.current[index] = curRef;
     }, [])
 
-    return <View>
+    return <View
+        style={styles.code}
+    >
         {
             code
                 .map((value, index) =>
                     <TextInput
                         key={index}
-                        style={digitStyle}
+                        style={styles.digit}
                         ref={(ref) => setRef(ref, index)}
                         value={value}
                         onChangeText={(value) => onCodeChange(value, index)}
@@ -98,4 +73,25 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    code: {
+        flex: 1,
+        justifyContent: 'space-between',
+        backgroundColor: '#fff',
+        padding: 20,
+        margin: 10,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    digit: {
+        flex: 1,
+        borderWidth: 2,
+        borderColor: '#808080',
+        margin: 10,
+        borderRadius: 10,
+        backgroundColor: 'rgba(100,100,100,0.125)',
+        textAlign: 'center',
+        width: 50,
+        height: 50,
+        fontWeight: 'bold'
+    }
 });

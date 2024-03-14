@@ -1,7 +1,7 @@
 import {StyleSheet, TextInput, View} from 'react-native';
 import {useCallback, useRef, useState} from "react";
 
-const length = 7;
+const length = 6;
 
 function Code(
     {

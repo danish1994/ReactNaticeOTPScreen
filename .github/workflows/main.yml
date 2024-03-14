@@ -3,7 +3,7 @@ on:
     branches:
       - main
 jobs:
-  update:
+  update_expo:
     runs-on: ubuntu-latest
     steps:
       - name: 🏗 Setup Repo

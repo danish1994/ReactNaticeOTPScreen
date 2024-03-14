@@ -1,7 +1,7 @@
 import {StyleSheet, TextInput, View} from 'react-native';
 import {useCallback, useRef, useState} from "react";
 
-const length = 6;
+const CODE_LENGTH = 6;
 
 function Code(
     {
@@ -59,7 +59,7 @@ function Code(
 }
 
 export default function App() {
-    const [code, setCode] = useState(Array.from({length}).map(() => ''));
+    const [code, setCode] = useState(Array.from({length: CODE_LENGTH}).map(() => ''));
     return (
         <View style={styles.container}>
             <Code code={code} setCode={setCode}/>

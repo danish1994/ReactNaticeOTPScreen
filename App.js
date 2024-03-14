@@ -14,7 +14,7 @@ function Code(
     const onCodeChange = useCallback((text, index) => {
         text = text.replace(/[^0-9]/g, '');
         
-        if (text.length >= length) {
+        if (text.length >= CODE_LENGTH) {
             const newCode = text.split('').slice(0, length);
             setCode(newCode);
         } else {

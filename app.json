@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "ReactNativeOTPScreen",
-    "slug": "ReactNativeOTPScreen",
+    "slug": "reactnaticeotpscreen",
     "owner": "dazansari",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -26,6 +26,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "69241264-324f-4a73-a3b3-3657488c25dd"
+      }
     }
   }
 }

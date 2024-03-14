@@ -12,9 +12,10 @@ function Code(
     const codeRef = useRef([]);
 
     const onCodeChange = useCallback((text, index) => {
+        text = text.replace(/[^0-9]/g, '');
+        
         if (text.length >= length) {
             const newCode = text.split('').slice(0, length);
-            console.log(newCode);
             setCode(newCode);
         } else {
             const newCode = [...code];
@@ -30,7 +31,6 @@ function Code(
                     codeRef.current[index - 1]?.focus()
                 }
             }
-            console.log(newCode);
             setCode(newCode);
         }
     }, [code, setCode]);
@@ -47,6 +47,7 @@ function Code(
                 .map((value, index) =>
                     <TextInput
                         key={index}
+                        keyboardType={'numeric'}
                         style={styles.digit}
                         ref={(ref) => setRef(ref, index)}
                         value={value}

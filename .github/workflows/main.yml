@@ -1,4 +1,4 @@
-- name: Expo GitHub Action
+name: Expo GitHub Action
   # You may pin to the exact commit or the version.
   # uses: expo/expo-github-action@6a82be3e3ed85d15c05f90d869db8dc95382aef3
   uses: expo/expo-github-action@8.1.0

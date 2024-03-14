@@ -21,7 +21,7 @@ function Code(
             const newCode = [...code];
             newCode[index] = text.charAt(text.length - 1) || '';
             if (newCode[index] !== '') {
-                if (index < length - 1) {
+                if (index < CODE_LENGTH - 1) {
                     codeRef.current[index + 1]?.focus()
                 }
             }
